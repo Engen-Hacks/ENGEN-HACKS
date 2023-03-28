@@ -1,0 +1,136 @@
+@use '@htv/ui-kit/styles/colors';
+@use '@htv/ui-kit/styles/mixins';
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.heading {
+  margin-right: 1rem;
+}
+
+.frame {
+  @include mixins.transition(height);
+  height: var(--height);
+  position: relative;
+  margin: 3rem 0 6rem;
+}
+
+.items {
+  @include mixins.transition(opacity);
+  grid-template-columns: repeat(var(--faction-count), minmax(0, 14rem));
+  justify-content: space-between;
+  list-style-type: none;
+  position: relative;
+  grid-gap: 2rem;
+  display: grid;
+  padding: 0;
+  margin: 0;
+
+  &__hide {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @include mixins.media(laptop) {
+    grid-template-columns: repeat(2, minmax(0, 14rem));
+    justify-content: space-evenly;
+  }
+
+  @include mixins.media(phone) {
+    grid-template-columns: repeat(2, minmax(0, 12rem));
+  }
+}
+
+.button {
+  @include mixins.transition(background-color opacity);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 2rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: colors.css-color(white, $opacity: 0.02);
+  }
+
+  &:active {
+    background-color: colors.css-color(white, $opacity: 0.04);
+  }
+}
+#pgq {
+  margin-top: 3rem;
+}
+
+.icon {
+  margin-bottom: 1rem;
+}
+
+.items,
+.content {
+  position: absolute;
+  bottom: auto;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  grid-template-columns: 16rem auto;
+  align-items: center;
+  grid-gap: 2rem 5rem;
+  display: grid;
+
+  &__hide {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @include mixins.media(laptop) {
+    grid-gap: 2rem;
+  }
+
+  @include mixins.media(tablet) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.content_header {
+  max-width: 14rem;
+  @include mixins.media(tablet) {
+    max-width: 12rem;
+  }
+}
+
+.content_text {
+  margin: 2rem 0;
+  a {
+    @include mixins.transition(color);
+    color: colors.css-color(lime);
+
+    &:hover,
+    &:focus {
+      color: colors.css-color(lime, hover);
+    }
+
+    &:active {
+      color: colors.css-color(lime, active);
+    }
+  }
+}
+
+.question_body {
+  margin-top: 2rem;
+}
+
+// Battle-of-Coding-Clashers specific styles
+.btcc_title {
+  margin-top: 1.5rem;
+}
+
+.btcc_icons {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,106 @@
+@use "@htv/ui-kit/styles/mixins";
+@use "@htv/ui-kit/styles/colors";
+
+.container {
+  padding-bottom: 5rem;
+  padding-top: 10rem;
+  display: flex;
+
+  @include mixins.media(laptop) {
+    flex-direction: column;
+  }
+}
+
+.lines-container {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 50vh;
+  width: 80vw;
+  background-image: url('../../../images/splash-lines.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 40%;
+}
+
+.header {
+  display: flex;
+}
+
+.gt,
+.title {
+  margin-bottom: 2rem;
+  font-size: 5rem;
+
+  @include mixins.media(phone) {
+    font-size: 3.25rem;
+  }
+}
+
+.gt {
+  margin-right: 1rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.25rem;
+
+  & > span {
+    white-space: nowrap;
+
+    @include mixins.media(phone) {
+      white-space: normal;
+    }
+  }
+}
+
+.version {
+  -webkit-text-stroke: 1.25px white;
+  -webkit-text-fill-color: transparent;
+}
+
+.subheader > * {
+  display: block;
+}
+
+.subheader > span:not(:last-of-type) {
+  font-size: 1.5rem;
+
+  @include mixins.media(phone) {
+    font-size: 1.25rem;
+  }
+}
+
+.prompt {
+  margin: 3rem 0 1rem;
+}
+
+.register-button {
+  margin: 1rem 0;
+  outline: none;
+  text-decoration: none;
+  display: inline-flex;
+
+  &__disabled,
+  &__disabled:hover,
+  &__disabled:focus,
+  &__disabled:active {
+    background-color: colors.css-color(disabled) !important;
+    border-color: colors.css-color(disabled) !important;
+    cursor: not-allowed;
+  }
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  flex: 0 1 60%;
+  flex-shrink: 1;
+}

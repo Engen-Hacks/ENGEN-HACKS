@@ -1,0 +1,72 @@
+@use "@htv/ui-kit/styles/colors";
+@use "@htv/ui-kit/styles/mixins";
+@use "@htv/ui-kit/styles/units";
+
+.container {
+  padding-bottom: 5rem;
+  margin-top: 5rem;
+}
+
+.rectangle {
+  max-width: units.$section-width * 0.72;
+  padding: 1rem 1.2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bashHeader {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  margin-bottom: 2rem;
+}
+
+.bashControls {
+  display: grid;
+  grid-template-columns: repeat(3, 0.8rem);
+  grid-gap: 0.3rem;
+}
+
+.bashButton {
+  border-radius: 999px;
+  height: 0.8rem;
+  width: 0.8rem;
+
+  &__red {
+    background-color: colors.css-color(red);
+  }
+
+  &__yellow {
+    background-color: colors.css-color(yellow);
+  }
+
+  &__green {
+    background-color: colors.css-color(lime);
+  }
+}
+
+.title {
+  display: flex;
+}
+
+.body {
+  padding: 0 4rem 6rem;
+
+  @include mixins.media(tablet) {
+    padding: 0 2rem 6rem;
+  }
+}
+
+.text {
+  margin-top: 2.5rem;
+}
+
+.atmosphere {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.wave {
+  color: colors.css-color(charcoal);
+}

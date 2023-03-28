@@ -1,0 +1,40 @@
+@use '@htv/ui-kit/styles/colors';
+@use '@htv/ui-kit/styles/fonts';
+
+@include fonts.init('@htv/ui-kit/assets/fonts/');
+@include colors.init;
+
+:global {
+  #___gatsby,
+  #gatsby-focus-wrapper,
+  body {
+    height: 100%;
+  }
+
+  #gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  html {
+    height: 100%;
+    &.animate {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.toastContainer .toast {
+  background-color: colors.css-color(darkviolet);
+  font-family: map-get(fonts.$fonts, secondary);
+  color: colors.css-color(white);
+}

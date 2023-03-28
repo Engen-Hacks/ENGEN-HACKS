@@ -1,0 +1,120 @@
+@use "@htv/ui-kit/styles/mixins";
+@use "@htv/ui-kit/styles/colors";
+@use "@htv/ui-kit/styles/units";
+
+.grid {
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+  margin: 1rem 0 0;
+  grid-gap: 1rem;
+  display: grid;
+  padding: 0;
+
+  @include mixins.media(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mixins.media(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  @include mixins.transition(background-color);
+  padding: 2rem 1.5rem;
+  text-align: start;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: colors.css-color(darkviolet, hover);
+  }
+
+  &:active {
+    background-color: colors.css-color(darkviolet, active);
+  }
+}
+
+.content {
+  @include mixins.transition(max-height, slow);
+  max-height: 30rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 1rem;
+  }
+
+  &__hidden {
+    max-height: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & ul {
+    margin-top: -1rem;
+  }
+
+  & li {
+    &::marker {
+      content: '+ ';
+    }
+
+    &:last-child::marker {
+      content: '& ';
+    }
+  }
+}
+
+.container {
+  margin: 10rem auto;
+}
+
+.frame {
+  max-width: units.$section-width;
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cover {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.question {
+  position: absolute;
+  font-size: 20rem;
+  opacity: 0.4;
+
+  &__outline {
+    color: transparent;
+    -webkit-text-stroke: 0.25rem colors.css-color(darkviolet);
+    margin-top: 2rem;
+    right: -15rem;
+
+    @include mixins.media(tablet) {
+      display: none;
+    }
+  }
+
+  &__solid {
+    align-self: flex-end;
+    left: -15rem;
+  }
+}
+
+.angle {
+  position: absolute;
+  color: colors.css-color(cactus);
+  width: 100%;
+}

@@ -1,0 +1,89 @@
+{
+  "name": "@htv/hack-the-front",
+  "private": true,
+  "description": "Join 750 innovative and creative developers, designers, and creators for 36 hours of hacking. You'll get access to some of the best hardware and APIs on the market. Plus get to meet some experienced and awesome mentors! All this in just one weekend? I know, it's hard to believe.",
+  "version": "1.1.5",
+  "author": {
+    "name": "Hack The Valley",
+    "email": "hello@hackthevalley.io",
+    "url": "https://hackthevalley.io"
+  },
+  "dependencies": {
+    "@htv/ui-kit": "^0.2.4",
+    "@react-icons/all-files": "^4.1.0",
+    "@svgr/webpack": "^5.5.0",
+    "airtable": "^0.11.4",
+    "babel-plugin-dev-expression": "^0.2.2",
+    "babel-preset-gatsby": "^1.12.0",
+    "classnames": "^2.3.1",
+    "color": "^4.2.3",
+    "eslint-config-react-app": "^6.0.0",
+    "gatsby": "^3.14.2",
+    "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-manifest": "^3.12.0",
+    "gatsby-plugin-netlify": "^3.14.0",
+    "gatsby-plugin-react-helmet": "^4.12.0",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-sass": "^4.12.0",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
+    "gatsby-source-airtable": "^2.3.0",
+    "gatsby-source-filesystem": "^3.12.0",
+    "gatsby-transformer-sharp": "^3.12.0",
+    "import-all.macro": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.7",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.3.0",
+    "react-icons": "^4.4.0",
+    "restful-react": "^15.9.4",
+    "sass": "^1.54.7",
+    "string-similarity": "^4.0.4"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.7.2",
+    "@netlify/plugin-gatsby": "^1.0.3",
+    "@trivago/prettier-plugin-sort-imports": "^2.0.4",
+    "husky": "^5.2.0",
+    "prettier": "2.2.1",
+    "pretty-quick": "^3.1.3"
+  },
+  "keywords": [
+    "hackathon",
+    "programming",
+    "computer science",
+    "student",
+    "university",
+    "toronto",
+    "hack the valley",
+    "hack valley",
+    "utsc",
+    "uoft",
+    "owo"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "lint": "prettier --check \"**/*.{js,jsx,scss}\"",
+    "lint:fix": "prettier --write \"**/*.{js,jsx,scss}\"",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "npm run lint && npm run build && lhci autorun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
